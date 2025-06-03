@@ -76,7 +76,7 @@ export default buildConfig({
       collections: {
         media: true,
       },
-      token: process.env.BLOB_STORAGE_TOKEN,
+      token: process.env.BLOB_READ_WRITE_TOKEN,
     }),
   ],
   secret: process.env.PAYLOAD_SECRET,
