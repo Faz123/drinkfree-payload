@@ -1,6 +1,6 @@
 // storage-adapter-import-placeholder
 import { vercelPostgresAdapter } from '@payloadcms/db-vercel-postgres'
-import { vercelBlobStorage } from '@payloadcms/storage-vercel-blob'
+import { s3Storage } from '@payloadcms/storage-s3' // s3-adapter-import-placeholder
 
 import sharp from 'sharp' // sharp-import
 import path from 'path'
@@ -70,13 +70,20 @@ export default buildConfig({
   globals: [Header, Footer],
   plugins: [
     ...plugins,
-    vercelBlobStorage({
-      // enable on production
+    s3Storage({
       enabled: process.env.NODE_ENV === 'production',
       collections: {
         media: true,
       },
-      token: process.env.BLOB_READ_WRITE_TOKEN,
+      bucket: process.env.R2_BUCKET_NAME || '',
+      config: {
+        credentials: {
+          accessKeyId: process.env.R2_BUCKET_ACCESS_KEY_ID || '',
+          secretAccessKey: process.env.R2_BUCKET_SECRET_ACCESS_KEY || '',
+        },
+        region: 'auto',
+        endpoint: process.env.R2_BUCKET_ENDPOINT || '',
+      },
     }),
   ],
   secret: process.env.PAYLOAD_SECRET,
