@@ -71,7 +71,7 @@ export default buildConfig({
   plugins: [
     ...plugins,
     s3Storage({
-      enabled: process.env.NODE_ENV === 'production',
+      enabled: true,
       collections: {
         media: true,
       },
