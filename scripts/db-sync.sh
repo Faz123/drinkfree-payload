@@ -47,3 +47,11 @@ if [ $? -ne 0 ]; then
 fi
 echo "Database restore completed successfully."
 
+# Remove the backup file from the Docker container
+docker exec -t drinkfree-payload-db-1 rm /neon_backup.sql
+if [ $? -ne 0 ]; then
+    echo "Failed to remove the backup file from the Docker container."
+    exit 1
+fi
+echo "Backup file removed from the Docker container."
+
