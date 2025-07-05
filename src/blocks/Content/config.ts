@@ -34,6 +34,21 @@ const columnFields: Field[] = [
     ],
   },
   {
+    name: 'isCard',
+    type: 'checkbox',
+    defaultValue: false,
+  },
+  {
+    name: 'cardImage',
+    type: 'upload',
+    relationTo: 'media',
+    admin: {
+      condition: (_data, siblingData) => {
+        return Boolean(siblingData?.isCard)
+      },
+    },
+  },
+  {
     name: 'richText',
     type: 'richText',
     editor: lexicalEditor({

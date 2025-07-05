@@ -22,8 +22,14 @@ export const ContentBlock: React.FC<ContentBlockProps> = (props) => {
         {columns &&
           columns.length > 0 &&
           columns.map((col, index) => {
-            const { enableLink, link, richText, size } = col
+            const { enableLink, link, richText, size, isCard } = col
 
+            if (isCard)
+              return (
+                <>
+                  <h2>This is a card</h2>
+                </>
+              )
             return (
               <div
                 className={cn(`col-span-4 lg:col-span-${colsSpanClasses[size!]}`, {

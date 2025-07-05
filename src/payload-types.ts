@@ -441,6 +441,8 @@ export interface ContentBlock {
   columns?:
     | {
         size?: ('oneThird' | 'half' | 'twoThirds' | 'full') | null;
+        isCard?: boolean | null;
+        cardImage?: (number | null) | Media;
         richText?: {
           root: {
             type: string;
@@ -1066,6 +1068,8 @@ export interface ContentBlockSelect<T extends boolean = true> {
     | T
     | {
         size?: T;
+        isCard?: T;
+        cardImage?: T;
         richText?: T;
         enableLink?: T;
         link?:
