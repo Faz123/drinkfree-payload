@@ -21,6 +21,32 @@ export const Users: CollectionConfig = {
       name: 'name',
       type: 'text',
     },
+    {
+      name: 'bluesky',
+      type: 'text',
+      label: 'Bluesky',
+      admin: {
+        description: 'Your Bluesky handle, without the @ symbol',
+      },
+    },
+    {
+      name: 'instagram',
+      type: 'text',
+      label: 'Instagram',
+      admin: {
+        description: 'Your Instagram handle, without the @ symbol',
+      },
+    },
+    {
+      name: 'authorImage',
+      type: 'upload',
+      relationTo: 'media',
+      label: 'Author Image',
+      admin: {
+        description: 'Author image to be used in blog posts and other content',
+        position: 'sidebar',
+      },
+    },
   ],
   timestamps: true,
 }
