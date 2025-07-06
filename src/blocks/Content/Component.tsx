@@ -1,6 +1,7 @@
 import { cn } from '@/utilities/ui'
 import React from 'react'
 import RichText from '@/components/RichText'
+import { Media } from '@/components/Media'
 
 import type { ContentBlock as ContentBlockProps } from '@/payload-types'
 
@@ -16,19 +17,44 @@ export const ContentBlock: React.FC<ContentBlockProps> = (props) => {
     twoThirds: '8',
   }
 
+  console.log(props)
+
   return (
     <div className="container my-16">
       <div className="grid grid-cols-4 lg:grid-cols-12 gap-y-8 gap-x-16">
         {columns &&
           columns.length > 0 &&
           columns.map((col, index) => {
-            const { enableLink, link, richText, size, isCard } = col
+            const { enableLink, link, richText, size, isCard, cardImage } = col
 
             if (isCard)
               return (
-                <>
-                  <h2>This is a card</h2>
-                </>
+                <div
+                  className={cn(`col-span-4 lg:col-span-${colsSpanClasses[size!]}`, {
+                    'md:col-span-2': size !== 'full',
+                  })}
+                  key={index}
+                >
+                  {cardImage && typeof cardImage === 'object' ? (
+                    <div>
+                      <Media
+                        resource={cardImage}
+                        size="medium"
+                        imgClassName="max-h-64 overflow-hidden rounded-xl object-cover"
+                      />
+                    </div>
+                  ) : (
+                    <div className={cn(`border border-solid border-red-600 rounded px-2 px-4`)}>
+                      <p className="text-red-600">Add an image!!!</p>
+                    </div>
+                  )}
+                  {/* Add the card content */}
+                  <div className="cardContent">
+                    {richText && <RichText data={richText} enableGutter={false} />}
+
+                    {enableLink && <CMSLink {...link} />}
+                  </div>
+                </div>
               )
             return (
               <div
