@@ -374,6 +374,18 @@ export interface Category {
 export interface User {
   id: number;
   name?: string | null;
+  /**
+   * Your Bluesky handle, without the @ symbol
+   */
+  bluesky?: string | null;
+  /**
+   * Your Instagram handle, without the @ symbol
+   */
+  instagram?: string | null;
+  /**
+   * Author image to be used in blog posts and other content
+   */
+  authorImage?: (number | null) | Media;
   updatedAt: string;
   createdAt: string;
   email: string;
@@ -1271,6 +1283,9 @@ export interface CategoriesSelect<T extends boolean = true> {
  */
 export interface UsersSelect<T extends boolean = true> {
   name?: T;
+  bluesky?: T;
+  instagram?: T;
+  authorImage?: T;
   updatedAt?: T;
   createdAt?: T;
   email?: T;
