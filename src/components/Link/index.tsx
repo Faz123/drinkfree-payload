@@ -2,6 +2,7 @@ import { Button, type ButtonProps } from '@/components/ui/button'
 import { cn } from '@/utilities/ui'
 import Link from 'next/link'
 import React from 'react'
+import ArrowUp from '@/../public/icons/arrow-up-right.svg'
 
 import type { Page, Post } from '@/payload-types'
 
@@ -60,6 +61,12 @@ export const CMSLink: React.FC<CMSLinkType> = (props) => {
       <Link className={cn(className)} href={href || url || ''} {...newTabProps}>
         {label && label}
         {children && children}
+
+        {appearance === 'default' ? (
+          <span className="mx-2">
+            <ArrowUp />
+          </span>
+        ) : null}
       </Link>
     </Button>
   )
