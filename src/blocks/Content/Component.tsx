@@ -36,11 +36,11 @@ export const ContentBlock: React.FC<ContentBlockProps> = (props) => {
                   key={index}
                 >
                   {cardImage && typeof cardImage === 'object' ? (
-                    <div>
+                    <div className="h-48 lg:h-64 w-full overflow-hidden rounded-xl ">
                       <Media
                         resource={cardImage}
                         size="medium"
-                        imgClassName="max-h-64 overflow-hidden rounded-xl object-cover"
+                        imgClassName="h-full w-full object-cover"
                       />
                     </div>
                   ) : (
@@ -50,7 +50,9 @@ export const ContentBlock: React.FC<ContentBlockProps> = (props) => {
                   )}
                   {/* Add the card content */}
                   <div className="cardContent">
-                    {richText && <RichText data={richText} enableGutter={false} />}
+                    <div className="py-4">
+                      {richText && <RichText data={richText} enableGutter={false} />}
+                    </div>
 
                     {enableLink && <CMSLink {...link} />}
                   </div>
