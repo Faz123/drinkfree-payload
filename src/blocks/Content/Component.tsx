@@ -2,7 +2,6 @@ import { cn } from '@/utilities/ui'
 import React from 'react'
 import RichText from '@/components/RichText'
 import { Media } from '@/components/Media'
-
 import type { ContentBlock as ContentBlockProps } from '@/payload-types'
 
 import { CMSLink } from '../../components/Link'
@@ -44,7 +43,7 @@ export const ContentBlock: React.FC<ContentBlockProps> = (props) => {
                       />
                     </div>
                   ) : (
-                    <div className={cn(`border border-solid border-red-600 rounded px-2 px-4`)}>
+                    <div className={cn(`border border-solid border-red-600 rounded px-4`)}>
                       <p className="text-red-600">Add an image!!!</p>
                     </div>
                   )}
