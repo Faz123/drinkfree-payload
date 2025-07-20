@@ -90,6 +90,13 @@ export const Posts: CollectionConfig<'posts'> = {
               relationTo: 'media',
             },
             {
+              name: 'heroText',
+              type: 'text',
+              admin: {
+                description: 'This text will be displayed over the hero image.',
+              },
+            },
+            {
               name: 'content',
               type: 'richText',
               editor: lexicalEditor({
@@ -219,6 +226,19 @@ export const Posts: CollectionConfig<'posts'> = {
         {
           name: 'name',
           type: 'text',
+        },
+        {
+          name: 'avatar',
+          type: 'relationship',
+          relationTo: 'media',
+        },
+        {
+          name: 'bluesky',
+          type: 'text', // Bluesky handle
+        },
+        {
+          name: 'instagram',
+          type: 'text', // Instagram handle
         },
       ],
     },

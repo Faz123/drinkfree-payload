@@ -40,7 +40,7 @@ fi
 
 
 # Restore the database from the backup file
-docker exec -e PGPASSWORD="$DB_PASSWORD" -t drinkfree-payload-db-1 pg_restore -c --no-owner -d postgres://$DB_USER:$DB_PASSWORD@127.0.0.1:5432/$DB_NAME /neon_backup.sql
+docker exec -e PGPASSWORD="$DB_PASSWORD" -t drinkfree-payload-db-1 pg_restore -c --no-owner --no-privileges -d postgres://$DB_USER:$DB_PASSWORD@127.0.0.1:5432/$DB_NAME /neon_backup.sql
 if [ $? -ne 0 ]; then
     echo "Database restore failed. Please check the backup file and try again."
     exit 1
