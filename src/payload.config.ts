@@ -17,12 +17,22 @@ import { Header } from './Header/config'
 import { plugins } from './plugins'
 import { defaultLexical } from '@/fields/defaultLexical'
 import { getServerSideURL } from './utilities/getURL'
+import { env } from 'process'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
 
 export default buildConfig({
   admin: {
+    autoLogin:
+      process.env.NODE_ENV === 'development'
+        ? {
+            email: env.ADMIN_EMAIL || '',
+            password: env.ADMIN_PASSWORD || '',
+            prefillOnly: false,
+          }
+        : false,
+
     components: {
       // The `BeforeLogin` component renders a message that you see while logging into your admin panel.
       // Feel free to delete this at any time. Simply remove the line below and the import `BeforeLogin` statement on line 15.

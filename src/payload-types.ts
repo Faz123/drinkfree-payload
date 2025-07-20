@@ -215,6 +215,10 @@ export interface Post {
   id: number;
   title: string;
   heroImage?: (number | null) | Media;
+  /**
+   * This text will be displayed over the hero image.
+   */
+  heroText?: string | null;
   content: {
     root: {
       type: string;
@@ -246,6 +250,9 @@ export interface Post {
     | {
         id?: string | null;
         name?: string | null;
+        avatar?: (number | null) | Media;
+        bluesky?: string | null;
+        instagram?: string | null;
       }[]
     | null;
   slug?: string | null;
@@ -1140,6 +1147,7 @@ export interface FormBlockSelect<T extends boolean = true> {
 export interface PostsSelect<T extends boolean = true> {
   title?: T;
   heroImage?: T;
+  heroText?: T;
   content?: T;
   relatedPosts?: T;
   categories?: T;
@@ -1157,6 +1165,9 @@ export interface PostsSelect<T extends boolean = true> {
     | {
         id?: T;
         name?: T;
+        avatar?: T;
+        bluesky?: T;
+        instagram?: T;
       };
   slug?: T;
   slugLock?: T;
