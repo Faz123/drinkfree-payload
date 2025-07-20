@@ -15,7 +15,7 @@ export const populateAuthors: CollectionAfterReadHook = async ({ doc, req, req: 
           id: typeof author === 'object' ? author?.id : author,
           collection: 'users',
         })
-        console.log('AuthorDoc', authorDoc)
+
         if (authorDoc) {
           authorDocs.push(authorDoc)
         }
