@@ -35,10 +35,13 @@ export const PostHero: React.FC<{
       </div>
       <header className="max-w-5xl pt-8 pb-8 flex">
         <div className="flex">
-          <Media
-            resource={AuthorImage.sizes?.square as MediaType}
-            imgClassName="max-w-[100px] md:max-w-[125px] rounded-full "
-          />
+          {AuthorImage && (
+            <Media
+              resource={AuthorImage.sizes?.square as MediaType}
+              imgClassName="max-w-[100px] md:max-w-[125px] rounded-full "
+            />
+          )}
+
           <div className="flex flex-col justify-start mx-4 ">
             {AuthorData?.name && (
               <p>
