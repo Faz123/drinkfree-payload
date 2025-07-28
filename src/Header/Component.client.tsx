@@ -3,6 +3,7 @@ import { useHeaderTheme } from '@/providers/HeaderTheme'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import React, { useEffect, useState } from 'react'
+import Logo from '@/../public/logo-white.svg'
 
 import type { Header } from '@/payload-types'
 
@@ -31,8 +32,8 @@ export const HeaderClient: React.FC<HeaderClientProps> = ({ data }) => {
   return (
     <header className="container relative z-20   " {...(theme ? { 'data-theme': theme } : {})}>
       <div className="py-8 flex justify-between">
-        <Link href="/">
-          <span className="text-3xl md:text-5xl uppercase">Drink Free</span>
+        <Link href="/" className="mr-8">
+          <Logo className="w-full max-w-52 h-auto" />
         </Link>
         <HeaderNav data={data} />
       </div>
