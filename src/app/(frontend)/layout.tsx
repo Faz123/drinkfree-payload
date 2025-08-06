@@ -11,6 +11,8 @@ import { Providers } from '@/providers'
 import { InitTheme } from '@/providers/Theme/InitTheme'
 import { mergeOpenGraph } from '@/utilities/mergeOpenGraph'
 import { draftMode } from 'next/headers'
+import NextTopLoader from 'nextjs-toploader'
+import { TransitionProvider } from '@/components/TransitionProvider'
 
 import './globals.css'
 import { getServerSideURL } from '@/utilities/getURL'
@@ -44,9 +46,9 @@ export default async function RootLayout({ children }: { children: React.ReactNo
               preview: isEnabled,
             }}
           />
-
+          <NextTopLoader color="#fff" />
           <Header />
-          {children}
+          <TransitionProvider>{children}</TransitionProvider>
           <Footer />
         </Providers>
       </body>
