@@ -63,7 +63,7 @@ export default async function Post({ params: paramsPromise }: Args) {
       </div>
 
       <div className="flex flex-col items-center gap-4 pt-8">
-        <div className="container">
+        <main className="container">
           <RichText data={post.content} enableGutter={false} />
           {post.relatedPosts && post.relatedPosts.length > 0 && (
             <RelatedPosts
@@ -71,7 +71,7 @@ export default async function Post({ params: paramsPromise }: Args) {
               docs={post.relatedPosts.filter((post) => typeof post === 'object')}
             />
           )}
-        </div>
+        </main>
       </div>
     </article>
   )
