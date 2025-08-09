@@ -9,9 +9,8 @@ import {
   lexicalEditor,
   UnorderedListFeature,
   OrderedListFeature,
-  ChecklistFeature,
+  // ChecklistFeature,
   LinkFeature,
-  TextStateFeature,
 } from '@payloadcms/richtext-lexical'
 
 import { authenticated } from '../../access/authenticated'
@@ -115,7 +114,7 @@ export const Posts: CollectionConfig<'posts'> = {
                     HorizontalRuleFeature(),
                     UnorderedListFeature(),
                     OrderedListFeature(),
-                    ChecklistFeature(),
+                    // ChecklistFeature(),
                     LinkFeature(),
                   ]
                 },
