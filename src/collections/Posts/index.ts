@@ -7,6 +7,11 @@ import {
   HorizontalRuleFeature,
   InlineToolbarFeature,
   lexicalEditor,
+  UnorderedListFeature,
+  OrderedListFeature,
+  ChecklistFeature,
+  LinkFeature,
+  TextStateFeature,
 } from '@payloadcms/richtext-lexical'
 
 import { authenticated } from '../../access/authenticated'
@@ -108,6 +113,11 @@ export const Posts: CollectionConfig<'posts'> = {
                     FixedToolbarFeature(),
                     InlineToolbarFeature(),
                     HorizontalRuleFeature(),
+                    UnorderedListFeature(),
+                    OrderedListFeature(),
+                    ChecklistFeature(),
+                    LinkFeature(),
+                    TextStateFeature(),
                   ]
                 },
               }),
