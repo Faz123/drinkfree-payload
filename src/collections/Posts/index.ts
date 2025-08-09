@@ -117,7 +117,6 @@ export const Posts: CollectionConfig<'posts'> = {
                     OrderedListFeature(),
                     ChecklistFeature(),
                     LinkFeature(),
-                    TextStateFeature(),
                   ]
                 },
               }),
