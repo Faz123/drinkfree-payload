@@ -7,6 +7,7 @@ import configPromise from '@payload-config'
 import { getPayload } from 'payload'
 import React from 'react'
 import PageClient from './page.client'
+import { getServerSideURL } from '@/utilities/getURL'
 
 export const dynamic = 'force-static'
 export const revalidate = 600
@@ -57,7 +58,14 @@ export default async function Page() {
 }
 
 export function generateMetadata(): Metadata {
+  const title = `Drink Free posts | Posts about the sober life | Drink Free`
+  const description = `Find all of the posts about my alcohol free journey here`
   return {
-    title: `Payload Website Template Posts`,
+    title: title,
+    description: description,
+    openGraph: {
+      title: title,
+      description: description,
+    },
   }
 }

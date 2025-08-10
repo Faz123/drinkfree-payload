@@ -55,7 +55,7 @@ export const HeaderClient: React.FC<HeaderClientProps> = ({ data }) => {
         </div>
       </header>
       {menuOpen && (
-        <div className="absolute bg-background h-full w-full z-40">
+        <div className="fixed bg-background h-full w-full z-40">
           <button onClick={toggleMenu} className="absolute top-10 right-4">
             <X size={32} />
           </button>
