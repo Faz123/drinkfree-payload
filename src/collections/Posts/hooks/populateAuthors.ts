@@ -27,6 +27,7 @@ export const populateAuthors: CollectionAfterReadHook = async ({ doc, req, req: 
             avatar: authorDoc.authorImage ?? '',
             bluesky: authorDoc.bluesky ?? '',
             instagram: authorDoc.instagram ?? '',
+            strava: authorDoc.strava ?? '',
           }))
         }
       } catch {

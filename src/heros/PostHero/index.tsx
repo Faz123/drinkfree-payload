@@ -52,7 +52,11 @@ export const PostHero: React.FC<{
 
             <p className="font-light text-sm mb-2">Sober Since Feb 2023</p>
             <div className="flex flex-row gap-2">
-              <SocialLinks bluesky={AuthorData?.bluesky} instagram={AuthorData?.instagram} />
+              <SocialLinks
+                bluesky={AuthorData?.bluesky}
+                instagram={AuthorData?.instagram}
+                strava={AuthorData?.strava}
+              />
             </div>
           </div>
         </div>

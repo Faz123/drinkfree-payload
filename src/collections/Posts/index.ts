@@ -248,6 +248,10 @@ export const Posts: CollectionConfig<'posts'> = {
           name: 'instagram',
           type: 'text', // Instagram handle
         },
+        {
+          name: 'strava',
+          type: 'text', // Strava athlete ID
+        },
       ],
     },
     ...slugField(),
