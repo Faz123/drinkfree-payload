@@ -253,6 +253,7 @@ export interface Post {
         avatar?: (number | null) | Media;
         bluesky?: string | null;
         instagram?: string | null;
+        strava?: string | null;
       }[]
     | null;
   slug?: string | null;
@@ -389,6 +390,10 @@ export interface User {
    * Your Instagram handle, without the @ symbol
    */
   instagram?: string | null;
+  /**
+   * Your Strava athlete ID
+   */
+  strava?: string | null;
   /**
    * Author image to be used in blog posts and other content
    */
@@ -1168,6 +1173,7 @@ export interface PostsSelect<T extends boolean = true> {
         avatar?: T;
         bluesky?: T;
         instagram?: T;
+        strava?: T;
       };
   slug?: T;
   slugLock?: T;
@@ -1296,6 +1302,7 @@ export interface UsersSelect<T extends boolean = true> {
   name?: T;
   bluesky?: T;
   instagram?: T;
+  strava?: T;
   authorImage?: T;
   updatedAt?: T;
   createdAt?: T;

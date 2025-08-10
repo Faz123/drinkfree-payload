@@ -38,6 +38,14 @@ export const Users: CollectionConfig = {
       },
     },
     {
+      name: 'strava',
+      type: 'text',
+      label: 'Strava',
+      admin: {
+        description: 'Your Strava athlete ID',
+      },
+    },
+    {
       name: 'authorImage',
       type: 'upload',
       relationTo: 'media',
