@@ -46,17 +46,17 @@ export const HeaderClient: React.FC<HeaderClientProps> = ({ data }) => {
     <>
       <header className="container relative z-20" {...(theme ? { 'data-theme': theme } : {})}>
         <div className="py-8 flex justify-between">
-          <Link href="/" className="mr-8">
+          <Link href="/" className="mr-8" aria-label="home">
             <Logo className="w-full max-w-52 h-auto" />
           </Link>
-          <button onClick={toggleMenu}>
+          <button onClick={toggleMenu} aria-label="menu toggle">
             <Menu size={32} />
           </button>
         </div>
       </header>
       {menuOpen && (
         <div className="fixed bg-background h-full w-full z-40">
-          <button onClick={toggleMenu} className="absolute top-10 right-4">
+          <button onClick={toggleMenu} className="absolute top-10 right-4" aria-label="menu toggle">
             <X size={32} />
           </button>
           <HeaderNav data={data} />
