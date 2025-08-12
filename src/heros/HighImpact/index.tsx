@@ -38,7 +38,7 @@ export const HighImpactHero: React.FC<Page['hero']> = ({ links, media, richText 
             </ul>
           )}
         </div>
-        <div className="select-none">
+        <div className="select-none max-h-[600px]">
           {media && typeof media === 'object' && <Media priority resource={media} />}
         </div>
       </div>
