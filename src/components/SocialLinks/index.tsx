@@ -19,7 +19,7 @@ const SocialLinks: React.FC<SocialLinkProps> = ({ bluesky, instagram, strava }) 
           className="w-5"
           aria-label="Bluesky profile link"
         >
-          <Bluesky className="w-full h-auto" />
+          <Bluesky />
         </a>
       )}
 
