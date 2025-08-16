@@ -53,6 +53,7 @@
     "next-transition-router": "^0.2.11",
     "nextjs-toploader": "^3.8.16",
     "payload": "3.40.0",
+    "payload-totp": "3.0.0-beta.3",
     "prism-react-renderer": "^2.3.1",
     "react": "19.1.0",
     "react-dom": "19.1.0",

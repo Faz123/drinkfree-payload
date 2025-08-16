@@ -398,6 +398,8 @@ export interface User {
    * Author image to be used in blog posts and other content
    */
   authorImage?: (number | null) | Media;
+  totpSecret?: string | null;
+  hasTotp?: boolean | null;
   updatedAt: string;
   createdAt: string;
   email: string;
@@ -1304,6 +1306,8 @@ export interface UsersSelect<T extends boolean = true> {
   instagram?: T;
   strava?: T;
   authorImage?: T;
+  totpSecret?: T;
+  hasTotp?: T;
   updatedAt?: T;
   createdAt?: T;
   email?: T;
