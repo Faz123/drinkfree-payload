@@ -13,9 +13,11 @@ import { mergeOpenGraph } from '@/utilities/mergeOpenGraph'
 import { draftMode } from 'next/headers'
 import NextTopLoader from 'nextjs-toploader'
 import { TransitionProvider } from '@/components/TransitionProvider'
+import GoogleAnalytics from '@/components/GoogleAnalytics'
 
 import './globals.css'
 import { getServerSideURL } from '@/utilities/getURL'
+import CookieBanner from '@/components/CookieBanner'
 
 const questrial = Questrial({
   weight: '400',
@@ -38,6 +40,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
         <InitTheme />
         <link href="/favicon.ico" rel="icon" sizes="32x32" />
         <link href="/favicon.svg" rel="icon" type="image/svg+xml" />
+        <GoogleAnalytics GA_MEASUREMENT_ID={`${process.env.NEXT_PUBLIC_ANALYTICS_ID}` || ''} />
       </head>
       <body>
         <Providers>
@@ -49,6 +52,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
           <NextTopLoader color="#fff" />
           <Header />
           <TransitionProvider>{children}</TransitionProvider>
+          <CookieBanner />
           <Footer />
         </Providers>
       </body>
