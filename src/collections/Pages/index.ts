@@ -36,13 +36,7 @@ export const Pages: CollectionConfig<'pages'> = {
     title: true,
     slug: true,
   },
-  custom: {
-    totp: {
-      disableAccessWrapper: {
-        read: authenticatedOrPublished,
-      },
-    },
-  },
+
   admin: {
     defaultColumns: ['title', 'slug', 'updatedAt'],
     livePreview: {
