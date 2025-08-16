@@ -1,7 +1,8 @@
 // storage-adapter-import-placeholder
 import { vercelPostgresAdapter } from '@payloadcms/db-vercel-postgres'
 import { s3Storage } from '@payloadcms/storage-s3' // s3-adapter-import-placeholder
-
+import { nodemailerAdapter } from '@payloadcms/email-nodemailer' // nodemailer-import-placeholder
+import nodemailer from 'nodemailer' // nodemailer-import-placeholder
 import sharp from 'sharp' // sharp-import
 import path from 'path'
 import { buildConfig, PayloadRequest } from 'payload'
@@ -40,6 +41,10 @@ export default buildConfig({
       // The `BeforeDashboard` component renders the 'welcome' block that you see after logging into your admin panel.
       // Feel free to delete this at any time. Simply remove the line below and the import `BeforeDashboard` statement on line 15.
       beforeDashboard: ['@/components/BeforeDashboard'],
+      graphics: {
+        Logo: '@/components/DrinkFreeLogo',
+        Icon: '@/components/DrinkFreeIcon',
+      },
     },
     importMap: {
       baseDir: path.resolve(dirname),
@@ -116,4 +121,16 @@ export default buildConfig({
     },
     tasks: [],
   },
+  email: nodemailerAdapter({
+    defaultFromAddress: 'noreply@drinkfree.co.uk',
+    defaultFromName: 'Drink Free',
+    transport: nodemailer.createTransport({
+      host: process.env.EMAIL_HOST || '',
+      port: parseInt(process.env.EMAIL_PORT || '587'),
+      auth: {
+        user: process.env.EMAIL_USER || '',
+        pass: process.env.EMAIL_PASSWORD || '',
+      },
+    }),
+  }),
 })
