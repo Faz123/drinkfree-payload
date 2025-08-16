@@ -56,6 +56,7 @@ export const plugins: Plugin[] = [
     generateURL,
   }),
   formBuilderPlugin({
+    defaultToEmail: 'contact@drinkfree.co.uk',
     fields: {
       payment: false,
     },
