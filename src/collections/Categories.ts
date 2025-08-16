@@ -12,13 +12,7 @@ export const Categories: CollectionConfig = {
     read: anyone,
     update: authenticated,
   },
-  custom: {
-    totp: {
-      disableAccessWrapper: {
-        read: anyone,
-      },
-    },
-  },
+
   admin: {
     useAsTitle: 'title',
   },

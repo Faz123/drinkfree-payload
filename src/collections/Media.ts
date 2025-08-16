@@ -22,13 +22,7 @@ export const Media: CollectionConfig = {
     read: anyone,
     update: authenticated,
   },
-  custom: {
-    totp: {
-      disableAccessWrapper: {
-        read: anyone,
-      },
-    },
-  },
+
   fields: [
     {
       name: 'alt',

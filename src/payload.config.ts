@@ -18,7 +18,6 @@ import { plugins } from './plugins'
 import { defaultLexical } from '@/fields/defaultLexical'
 import { getServerSideURL } from './utilities/getURL'
 import { env } from 'process'
-import { payloadTotp } from 'payload-totp'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
@@ -94,13 +93,6 @@ export default buildConfig({
         },
         region: 'auto',
         endpoint: process.env.R2_BUCKET_ENDPOINT || '',
-      },
-    }),
-    payloadTotp({
-      collection: 'users',
-      disabled: false, // Set to true to disable TOTP for all users
-      totp: {
-        issuer: 'DrinkFree',
       },
     }),
   ],
