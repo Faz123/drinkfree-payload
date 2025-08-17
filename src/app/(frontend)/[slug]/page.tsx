@@ -62,7 +62,7 @@ export default async function Page({ params: paramsPromise }: Args) {
   }
 
   const { hero, layout } = page
-
+  console.log(hero)
   return (
     <main>
       <PageClient />
@@ -71,7 +71,7 @@ export default async function Page({ params: paramsPromise }: Args) {
 
       {draft && <LivePreviewListener />}
 
-      <RenderHero {...hero} />
+      <RenderHero {...hero} title={page.title} />
       <RenderBlocks blocks={layout} />
     </main>
   )
