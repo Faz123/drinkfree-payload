@@ -30,10 +30,10 @@ export default function CookieBanner() {
 
   return (
     <div
-      className={`my-10 mx-auto max-w-max md:max-w-screen-sm
-                        fixed bottom-0 left-0 right-0 
+      className={`my-10 mx-auto max-w-max md:max-w-screen-md
+                        fixed bottom-0 left-0 right-0 border border-white
                           ${cookieConsent ? 'hidden' : 'flex'}  px-3 md:px-4 py-3 justify-between items-center flex-col sm:flex-row gap-4  
-                         bg-gray-700 rounded-lg shadow`}
+                          backdrop-blur-xl rounded-lg shadow`}
     >
       <div className="text-center">
         <Link href="/info/cookies">
@@ -52,7 +52,7 @@ export default function CookieBanner() {
         </button>
         <button
           onClick={() => setCookieConsent(true)}
-          className="bg-gray-900 px-5 py-2 text-white rounded-lg"
+          className="bg-primary text-black  px-5 py-2  rounded-lg"
         >
           Allow Cookies
         </button>
