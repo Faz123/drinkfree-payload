@@ -62,7 +62,7 @@ export default async function Page({ params: paramsPromise }: Args) {
   }
 
   const { hero, layout } = page
-  console.log(hero)
+  // console.log(hero)
   return (
     <main>
       <PageClient />
