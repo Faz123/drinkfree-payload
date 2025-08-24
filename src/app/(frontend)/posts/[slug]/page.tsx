@@ -7,6 +7,9 @@ import { getPayload } from 'payload'
 import { draftMode } from 'next/headers'
 import React, { cache } from 'react'
 import RichText from '@/components/RichText'
+import { Button } from '@/components/ui/button'
+import Link from 'next/link'
+import ArrowUp from '@/../public/icons/arrow-up-right.svg'
 
 import type { Post } from '@/payload-types'
 
@@ -71,6 +74,17 @@ export default async function Post({ params: paramsPromise }: Args) {
               docs={post.relatedPosts.filter((post) => typeof post === 'object')}
             />
           )}
+          <div className="border rounded-lg p-8">
+            <p className="mb-4">Enjoy this? Why not read some more -</p>
+            <Button asChild>
+              <span className="flex flex-row">
+                <Link className="mr-4 hover:underline" href={`/posts`}>
+                  Back to Posts
+                </Link>
+                <ArrowUp />
+              </span>
+            </Button>
+          </div>
         </main>
       </div>
     </article>
