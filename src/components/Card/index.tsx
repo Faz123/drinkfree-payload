@@ -41,7 +41,11 @@ export const Card: React.FC<{
         {!metaImage && <div className="">No image</div>}
         {metaImage && typeof metaImage !== 'string' && (
           <div className="h-48 lg:h-64 w-full overflow-hidden rounded-xl">
-            <Media resource={metaImage} size="medium" imgClassName="h-full w-full object-cover" />
+            <Media
+              resource={metaImage}
+              size="medium"
+              imgClassName="h-full w-full object-cover aspect-video"
+            />
           </div>
         )}
       </div>
