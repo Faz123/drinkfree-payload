@@ -78,17 +78,19 @@ export const Card: React.FC<{
         )}
         {titleToUse && (
           <div className="">
-            <h2>
+            <h2 className="text-2xl">
               <Link className="not-prose" href={href} ref={link.ref}>
                 {titleToUse}
               </Link>
             </h2>
+            {description && (
+              <div className="mt-2">{description && <p>{sanitizedDescription}</p>}</div>
+            )}
             <div className="my-4 flex flex-row">
               <p className="text-xl mr-2">Read More</p> <ArrowUp />
             </div>
           </div>
         )}
-        {description && <div className="mt-2">{description && <p>{sanitizedDescription}</p>}</div>}
       </div>
     </article>
   )
