@@ -39,6 +39,13 @@ export const Posts: CollectionConfig<'posts'> = {
     read: authenticatedOrPublished,
     update: authenticated,
   },
+  custom: {
+    totp: {
+      disableAccessWrapper: {
+        read: authenticatedOrPublished,
+      },
+    },
+  },
 
   // This config controls what's populated by default when a post is referenced
   // https://payloadcms.com/docs/queries/select#defaultpopulate-collection-config-property
