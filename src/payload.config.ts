@@ -7,6 +7,7 @@ import sharp from 'sharp' // sharp-import
 import path from 'path'
 import { buildConfig, PayloadRequest } from 'payload'
 import { fileURLToPath } from 'url'
+import { payloadTotp } from 'payload-totp'
 
 import { Categories } from './collections/Categories'
 import { Media } from './collections/Media'
@@ -98,6 +99,14 @@ export default buildConfig({
         },
         region: 'auto',
         endpoint: process.env.R2_BUCKET_ENDPOINT || '',
+      },
+    }),
+    payloadTotp({
+      collection: 'users',
+      forceWhiteBackgroundOnQrCode: true,
+      disabled: process.env.NODE_ENV === 'development',
+      totp: {
+        issuer: 'Drink Free Payload',
       },
     }),
   ],
