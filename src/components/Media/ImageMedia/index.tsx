@@ -63,10 +63,9 @@ export const ImageMedia: React.FC<MediaProps> = (props) => {
         className={cn(imgClassName)}
         fill={fill}
         height={!fill ? height : undefined}
-        placeholder="blur"
-        blurDataURL={placeholderBlur}
+        placeholder="empty"
         priority={priority}
-        quality={100}
+        quality={90}
         loading={loading}
         sizes={sizes}
         src={src}
