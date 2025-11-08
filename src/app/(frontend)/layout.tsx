@@ -12,7 +12,6 @@ import { InitTheme } from '@/providers/Theme/InitTheme'
 import { mergeOpenGraph } from '@/utilities/mergeOpenGraph'
 import { draftMode } from 'next/headers'
 import NextTopLoader from 'nextjs-toploader'
-import { TransitionProvider } from '@/components/TransitionProvider'
 import GoogleAnalytics from '@/components/GoogleAnalytics'
 
 import './globals.css'
@@ -51,7 +50,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
           />
           <NextTopLoader color="#fff" />
           <Header />
-          <TransitionProvider>{children}</TransitionProvider>
+          {children}
           <CookieBanner />
           <Footer />
         </Providers>
