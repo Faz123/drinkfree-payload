@@ -138,7 +138,7 @@ export const Pages: CollectionConfig<'pages'> = {
   versions: {
     drafts: {
       autosave: {
-        interval: 1000, // We set this interval for optimal live preview
+        interval: 300, // We set this interval for optimal live preview
       },
       schedulePublish: true,
     },
